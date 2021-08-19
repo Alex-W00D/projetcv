@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ad07d8a7c8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <title>Document</title>
+
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        /* border: black 1px solid ; */
+        }
+
+        body{
+            max-width: 1080px;
+            height: auto;
+            margin: auto;
+            
+        }
+
+
+        .fond{
+            max-width: 100%;
+            height: 1920px;
+            background: url(svg/fondentier.svg);
+            background-repeat: no-repeat;
+            border: black 1px solid ;
+        }
+        
+        .titre{
+            max-width: 100%;
+
+        }
+        .adresse{
+            display: flex;
+            
+        }
+
+        .cv{
+            position: absolute;
+            display: flex;
+            max-width: 25%;
+            margin-top: -50px;
+            margin-left: 70px;
+
+        }
+
+       .infophoto{
+           max-width: 100%;
+           height: auto;
+           display: flex;
+           margin-right: auto;
+           margin-left: auto;
+           
+       }
+
+       
+       .nom .adresse{
+            width: 80%;
+            animation: typing 5s steps(22), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin-left: 80px;
+        }
+
+        .info{
+            animation:bounce-in-top 3s both}
+
+ @keyframes bounce-in-top{0%{transform:translateY(-500px);animation-timing-function:ease-in;opacity:0}38%{transform:translateY(0);animation-timing-function:ease-out;opacity:1}55%{transform:translateY(-65px);animation-timing-function:ease-in}72%{transform:translateY(0);animation-timing-function:ease-out}81%{transform:translateY(-28px);animation-timing-function:ease-in}90%{transform:translateY(0);animation-timing-function:ease-out}95%{transform:translateY(-8px);animation-timing-function:ease-in}100%{transform:translateY(0);animation-timing-function:ease-out}}
+
+
+
+        .contact{
+            display: none;
+        }
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+       
+
+       .infophoto .photo{
+           width: 25%;
+       }
+
+       .infophoto .nom{
+           width: 50%;
+           margin-right: 10px;
+           margin-left: 10px;
+           margin-top: 20px;
+       }
+
+       .infophoto .nom .martin, .adresse{
+           margin-top: 50px;
+       }
+
+       .email{
+           
+           max-width: 100%;
+           margin-left: auto;
+           margin-right: auto;
+       }
+
+       *, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    display: block;
+    margin: -15px auto 0;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #333;
+    padding: 5px 30px;
+    background: rgba(red, 26.95, 2.95, alpha);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 6px grey;
+}
+
+.btn:hover {
+    box-shadow: 0 4px grey;
+    top: 2px;
+}
+
+.btn:active {
+    box-shadow: 0 0 grey;
+    top: 6px;
+}
+
+a{
+  text-decoration:none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 8px;
+}
+
+
+        #menu {
+        display: none;
+        max-width: 1200px;
+        background: #CC6906;
+        color: #FFF;
+        height: 50px;
+        padding-left: 18px;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+    }
+    #menu ul, #menu li {
+        margin: 0 auto;
+        padding: 0;
+        list-style: none
+        
+    }
+    #menu ul {
+        max-width: 100%;
+        transform: translate(120px);       
+        
+    }
+
+    #menu li {
+        
+        
+        display: inline-block;
+        position: relative;
+        width: 15%;
+        
+        
+    }
+    #menu a {
+        display: block;
+        line-height: 50px;
+        padding: 0 14px;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #menu a.dropdown-arrow:after {
+        content: "\25BE";
+        margin-left: 5px;
+    }
+    #menu li a:hover {
+        color: #0099CC;
+        background: #F2F2F2;
+    }
+    #menu input {
+        display: none;
+        margin: 0;
+        padding: 0;
+        height: 50px;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer
+    }
+    #menu label {
+        display: none;
+        line-height: 50px;
+        text-align: center;
+        position: absolute;
+        left: 35px
+    }
+    #menu label:before {
+        font-size: 1.6em;
+        content: "\2261"; 
+        margin-left: 20px;
+    }
+    #menu ul.sub-menus{
+        height: auto;
+        overflow: hidden;
+        width: 170px;
+        background: #444444;
+        position: absolute;
+        z-index: 99;
+        display: none;
+    }
+    #menu ul.sub-menus li {
+        display: block;
+        width: 100%;
+    }
+    #menu ul.sub-menus a {
+        color: #FFFFFF;
+        font-size: 16px;
+    }
+    #menu li:hover ul.sub-menus {
+        display: block
+    }
+    #menu ul.sub-menus a:hover{
+        background: #F2F2F2;
+        color: #444444;
+    }
+
+    .section3, .section4, .section5{
+        display: none;
+    }
+
+    .section1, .section2{
+        display: flex;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section1{
+        margin-top: 20px;
+    }
+
+    .colgauche, .coldroite, .colgauche2, .coldroite2{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    .coldroite2{
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+
+    .experience{
+        max-width: 80%;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .competences{
+        max-width: 90%;
+        display: flex;
+        margin-top: 70px;
+        margin-left: 60px;
+    }
+
+    .formation{
+        max-width: 65%;
+        display: flex;
+        margin-left: 50px;
+        
+    }
+
+    .hobbies, .langues{
+        max-width: 70%;
+        display: flex;
+        margin-left: 60px;
+    }
+
+    
+    .hobbies{
+        margin-bottom: 20px;
+        
+    }
+
+    .langues{
+        margin-top: 20px;
+    }
+
+    .titre{
+        display: flex;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        
+        
+    }
+
+    .metier{
+        max-width: 50%;
+        margin-left: 280px;
+        
+    }
+
+    .dernierbloc{
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 30px;
+    }
+
+    .dernierbloc .texte{
+        max-width: 70%;
+        
+    }
+
+    @media screen and (max-width: 800px){
+        #menu {display: block;}
+        #menu{margin-bottom: 100px;}
+        #menu {position:relative}
+        #menu ul {position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;margin-left: -120px;background: rgb(236, 236, 219);}
+        
+        #menu ul img {display:flex;width:auto;}
+        #menu input, #menu label {position:absolute;top:0;left:0;display:block}
+        #menu input {z-index:4}
+        #menu input:checked + label {color:white}
+        #menu input:checked + label:before {content:"\00d7"}
+        #menu input:checked ~ ul {display:block}
+        h1{margin-left: 50px;margin-top: 10px;}
+       
+
+    .btn {
+    display: none;
+    }
+
+    .section1, .section2{
+        display: flex;
+    }
+
+
+    .contact{
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            margin-left: 330px;
+            margin-top: 120px;
+            letter-spacing: 15px;
+            
+            animation: clignote 4s linear infinite;
+            }
+            @keyframes clignote {  
+            50% { opacity: 0; }
+            }
+    
+
+        .contact a{
+            color: rgb(255, 60, 0);
+            font-size: xx-large;
+        }
+
+            .email{
+        display: none;
+        }
+
+        .infophoto {
+            
+            display: flex;
+            max-width: 100%;
+            height: 180px;
+
+        }
+
+            .photo{
+            display: flex;    
+            max-width: 33.33%;
+            height: 180px;
+            align-items: center;
+        
+            }
+
+            .img {
+                display: flex;
+                max-width: auto;
+                height: 100%;
+                margin: auto;
+            }
+
+            .infophoto .nom {
+                display: block;
+                height: 180px;
+                max-width: 66.66%;     
+                /* margin-right: auto;
+                margin-left: auto; */
+                margin-top: -20px;    
+            }
+
+            .martin{
+                max-width: 400px;
+                transform: translate(40px);
+            }
+
+            .titre{
+                position: relative;
+                display: flex;
+                width: 800px;
+                height: 50px;
+                margin-top: 20px;
+                transform: translate(-70px);
+                
+            }
+
+            .metier{
+                width: 100%;
+            }
+            
+            .info, .adresse{
+                    display: none;
+                }     
+
+            .titre{
+                    position:absolute;
+                    display: flex;
+                }
+                
+                .titre .metier{
+                    display: flex;
+                    align-items: center;
+                    animation:scale-in-hor-left 3s cubic-bezier(.25,.46,.45,.94) both;                
+                }
+
+@keyframes scale-in-hor-left{0%{transform:scaleX(0);transform-origin:0 0;opacity:1}100%{transform:scaleX(1);transform-origin:0 0;opacity:1}}
+
+                .cv{
+                    display: none;
+                }
+
+                .section1{
+                    max-width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 50px;
+                    margin-bottom: 100px;
+                }
+
+                .colgauche{
+                    display: flex;
+                    flex-direction: row;
+                    max-width: 50%;
+                    margin-top: 50px;
+                }
+
+                .experience{
+                display: flex;
+                max-width: 100%;
+                margin-left: 30px;
+                margin-top: -100px;     
+                
+            }
+
+                .coldroite{
+                    display: flex;
+                    max-width: 50%;
+                    margin-top: -100px;
+                }
+                
+                .competences{
+                display: flex;
+                position: relative;
+                max-width: 100%;               
+
+            }
+            
+            .section2{
+                max-width: 100%;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .colgauche2{
+                display: flex;
+                max-width: 50%;
+
+            }
+
+            .formation{
+                display: flex;
+                max-width: 100%;
+                
+            }
+
+
+            .coldroite2{
+                display: flex;
+                flex-direction: column;
+                max-width: 50%;
+
+            }
+
+            .hobbies{
+                display: flex;
+                width: 100%;
+              
+            }
+
+            .langues{
+                display: flex;
+                width: 100%;
+                
+            }
+            
+
+            .dernierbloc{
+                display: none;
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .section3, .section4, .section5{
+        display: none;
+    }
+            
+    }
+
+    @media screen and (max-width: 480px){
+        #menu {display: block;}
+        #menu{margin-bottom: 30px;}
+        #menu {position:relative}
+        #menu ul {position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;margin-left: -120px;background: rgb(236, 236, 219);}
+        
+        #menu ul img {display:flex;width:auto;}
+        #menu input, #menu label {position:absolute;top:0;left:0;display:block}
+        #menu input {z-index:4}
+        #menu input:checked + label {color:white}
+        #menu input:checked + label:before {content:"\00d7"}
+        #menu input:checked ~ ul {display:block}
+        h1 {margin-left: 50px;margin-top: 10px;}
+       
+
+    .btn {
+    display: none;
+    }
+
+    .section1, .section2{
+        display: flex;
+    }
+
+
+    .contact{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            margin-left: 420px;
+            margin-top: 20px;
+            letter-spacing: 15px;        
+            animation: clignote 4s linear infinite;
+            }
+
+            @keyframes clignote {  
+            50% { opacity: 0; }
+            }
+    
+
+        .contact a{
+            color: rgb(255, 60, 0);
+            font-size: x-large;
+        }
+
+            .email{
+        display: none;
+        }
+
+        .infophoto {
+            
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            height: 180px;
+           
+
+        }
+
+            .photo{
+            display: flex;    
+            max-width: 100%;
+            height: 180px;
+            margin-left: auto;
+            margin-right: auto;
+        
+            }
+
+            .img {
+                display: flex;
+                max-width: auto;
+                height: 100%;
+                margin: auto;
+            }
+
+            .infophoto .nom {
+                display: flex;
+                height: 180px;
+                max-width: 100%;     
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: -50px;    
+            }
+
+            .nom .martin{
+                display: flex;
+                position: relative;
+                margin-left: -35px;
+                max-width: 100%;
+                
+            }
+
+            .titre{
+                position: relative;
+                display: flex;
+                max-width: 200%;
+                height: 50px;
+                margin-top: 20px;
+                transform: translate(-250px);
+                
+                
+            }
+
+            .metier{
+                width: 100%;
+            }
+            
+            .info, .adresse{
+                    display: none;
+                }     
+
+            .titre{
+                    position:absolute;
+                    display: flex;
+                }
+                
+                .titre .metier{
+                    display: flex;
+                    align-items: center;
+                    animation:scale-in-hor-left 3s cubic-bezier(.25,.46,.45,.94) both;                
+                }
+
+@keyframes scale-in-hor-left{0%{transform:scaleX(0);transform-origin:0 0;opacity:1}100%{transform:scaleX(1);transform-origin:0 0;opacity:1}}
+
+                .cv{
+                    display: none;
+                }
+
+                .section1{
+                    max-width: 80%;
+                    height: 400px;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background-image: url(svg/formation.svg);
+                    background-repeat: no-repeat;
+                }
+
+                .colgauche{
+                    display: none;
+                    flex-direction: column;
+                    position: relative;                  
+                    margin-top: 10px;
+                }
+
+                .experience{
+                
+               width: 300px;
+               position: relative;
+                 
+                
+            }
+
+                .coldroite{
+                    display: none;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+                
+                .competences{
+                display: flex;
+                position: relative;
+                width: 100%;               
+
+            }
+            
+            .section2{
+                max-width: 80%;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 40px;
+                margin-bottom: 10px;
+                background-image: url(svg/formation.svg);
+                background-repeat: no-repeat;
+            }
+
+            .colgauche2{
+                position: relative;
+                display: none;
+                height: 50%;
+                flex-direction: column;
+                width: 90%;
+                
+            }
+
+            .formation{
+                display: flex;
+                flex-direction: column;
+                object-fit: cover;
+                
+            }
+
+
+            .coldroite2{
+                display: none;
+                flex-direction: column;
+                max-width: 100%;
+                height: 50%;
+
+            }
+
+            .hobbies{
+                display: flex;
+                width: 100%;
+              
+            }
+
+            .langues{
+                display: flex;
+                width: 100%;
+                
+            }
+            
+
+            .dernierbloc{
+                display: none;
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .section3,.section4,.section5{
+                max-width: 80%;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 40px;
+                margin-bottom: 10px;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+
+            .section3{
+                background-image: url(svg/competences.svg);
+                background-repeat: no-repeat;
+            }
+
+            .section4{
+                background-image: url(svg/hobbies.svg);
+                background-repeat: no-repeat;
+            }
+
+            .section5{
+                background-image: url(svg/langues.svg);
+                background-repeat: no-repeat;
+            }
+            
+    }
+
+
+
+</style>
+
+
+</head>
+<body>
+
+    <div class="fond">
+        <div class="contact">
+            <a href="mailto:martin@johnson.com"><i class="fas fa-envelope"></i></a>
+            <a href="gamebymartin.com" target="_blank"><i class="fas fa-at"></i></a>
+            <a href="tel:+33768000000"><i class="fas fa-phone-square-alt"></i></a>
+        </div>
+<!-- une div infophoto avec à l'intérieur 3 div : gauche photo - milieu nom et adresse - droite email-->        
+<div class="infophoto">
+            
+            
+    <div class="photo">
+        <img class="img" 
+        src="photo.svg"                 
+        alt="photocv"/>
+        
+    </div>
+
+    <div class="nom">
+        <a href=""></a>
+       <img class="martin" 
+        src="nom.svg" alt="nom"
+        /> 
+        <p class="adresse">
+        25 rue des mésanges Bat.A Appt.112 33000 Bordeaux
+        </p>
+
+    </div>
+
+    <div class="info">
+        <a href="mailto:martin@johnson.com"><img class="email"
+        src="email.svg" alt="adressemail" 
+        style="width: 250px;height: 250px;" /></a>
+        
+    </div>
+    
+
+</div>
+
+<!-- une div sur toute la largeur et y intégrer le logo metier-->
+    <div class="titre">
+        <img class="metier" alt="titremetier"
+        src="metier.svg" />
+
+        <div class="cv">
+            <a href="cv_projet_pdf.pdf" target="_blank" download="cv_projet_pdf">
+            <button class="btn" type="button"><i class="fas fa-file-download"></i> mon cv</button>
+            </a>
+        </div>
+           
+
+    </div>
+
+<!-- menu invisible en format web mais visible en responsive pour afficher le texte de presentation -->
+
+    <nav id='menu'>
+    <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label><h1><i class="far fa-hand-point-left"></i> ma présentation</h1>
+    <ul><img src="svg/texte.svg"></ul>
+  </nav>
+
+<!--une div contenant deux blocs-->      
+
+<div class="section1">
+
+         
+         
+<!-- barre verticale test-->
+   <!--  <hr class="barre"> -->
+
+    <div class="colgauche">
+        <img class="experience"
+        src="experience.svg" alt="exp">
+        <!-- <p class="txtexp"> experiences </p> -->
+
+
+
+        
+    
+    </div>
+
+    <div class="coldroite">
+
+        <img class="competences"
+        src="competences.svg" alt="comp">
+        
+    </div>
+
+</div>
+
+<!-- une div contenant encore deux blocs -->
+
+<div class="section2">
+    <!-- barre verticale test-->
+    <!-- <hr class="barre2">
+    <p class="txtform"> formation </p> -->
+    <div class="colgauche2">
+        <img class="formation"
+        src="formation.svg" alt="for">
+        
+
+    </div>
+
+    <div class="coldroite2">
+        
+        <img class="hobbies"
+        src="hobbies.svg" alt="hob">
+        
+        <img class="langues"
+        src="langues.svg" alt="lng">
+
+    </div>
+
+</div>
+
+<div class="section3"></div>
+<div class="section4"></div>
+<div class="section5"></div>
+
+<!-- dernier bloc contenant 4 icones + texte importé -->
+
+<div class="dernierbloc">
+    <img class="texte"
+        src="texte.svg" alt="txt">
+    
+
+</div>
+
+</div>        
+
+
+  </div>
+</body>
+</html>
+
+
+
+
