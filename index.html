@@ -348,9 +348,10 @@ a{
     }
 
     @media screen and (max-width: 800px){
-        #menu {display: block;}
-        #menu{margin-bottom: 100px;}
-        #menu {position:relative}
+        #menu {display: flex;
+        margin-bottom: 100px;
+        align-items: center;
+        position:relative}
         #menu ul {position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;margin-left: -120px;background: rgb(236, 236, 219);}
         
         #menu ul img {display:flex;width:auto;}
@@ -359,7 +360,9 @@ a{
         #menu input:checked + label {color:white}
         #menu input:checked + label:before {content:"\00d7"}
         #menu input:checked ~ ul {display:block}
-        h1{margin-left: 50px;margin-top: 10px;}
+        h1{
+            margin-left: 50px;
+        }
        
 
     .btn {
@@ -372,12 +375,15 @@ a{
 
 
     .contact{
+            max-width: 100%;
             position: absolute;
             display: flex;
             flex-direction: row;
-            margin-left: 330px;
-            margin-top: 120px;
+            justify-content: center;
+            margin-top: 100px;
             letter-spacing: 15px;
+            text-align: center;
+            margin-left: 330px;
             
             animation: clignote 4s linear infinite;
             }
@@ -429,17 +435,16 @@ a{
 
             .martin{
                 max-width: 400px;
-                
-                
+                transform: translate(40px);
             }
 
             .titre{
                 position: relative;
                 display: flex;
-                width: 750px;
+                width: 800px;
                 height: 50px;
                 margin-top: 20px;
-                transform: translate(-50px);
+                transform: translate(-90px);
                 
             }
 
@@ -486,7 +491,7 @@ a{
                 .experience{
                 display: flex;
                 max-width: 100%;
-                margin-left: 30px;
+                margin-left: -20px;
                 margin-top: -100px;     
                 
             }
@@ -495,6 +500,8 @@ a{
                     display: flex;
                     max-width: 50%;
                     margin-top: -100px;
+                    margin-left: -50px;
+
                 }
                 
                 .competences{
@@ -518,7 +525,8 @@ a{
 
             .formation{
                 display: flex;
-                max-width: 100%;
+                max-width: 80%;
+                margin-left: -20px;
                 
             }
 
@@ -527,18 +535,21 @@ a{
                 display: flex;
                 flex-direction: column;
                 max-width: 50%;
+                margin-left: -50px;
 
             }
 
             .hobbies{
                 display: flex;
                 width: 100%;
+                margin-bottom: 60px;
               
             }
 
             .langues{
                 display: flex;
                 width: 100%;
+                margin-top: 40px;
                 
             }
             
@@ -556,7 +567,10 @@ a{
     }
 
     @media screen and (max-width: 480px){
-        #menu {display: block;}
+        #menu {
+            display: flex;
+            align-items: center;
+        }
         #menu{margin-bottom: 30px;}
         #menu {position:relative}
         #menu ul {position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;margin-left: -120px;background: rgb(236, 236, 219);}
@@ -567,7 +581,7 @@ a{
         #menu input:checked + label {color:white}
         #menu input:checked + label:before {content:"\00d7"}
         #menu input:checked ~ ul {display:block}
-        h1 {margin-left: 50px;margin-top: 10px;}
+        /* h1 {margin-left: 50px;margin-top: 10px;} */
        
 
     .btn {
@@ -580,11 +594,12 @@ a{
 
 
     .contact{
+            max-width: 100%;
             position: absolute;
             display: flex;
             flex-direction: column;
-            margin-left: 325px;
             margin-top: 20px;
+            margin-left: 10px;
             letter-spacing: 15px;        
             animation: clignote 4s linear infinite;
             }
@@ -641,29 +656,34 @@ a{
             .nom .martin{
                 display: flex;
                 position: relative;
-                margin-left: -35px;
-                max-width: 100%;
+                margin-left: -60px;
+                max-width: 150%;
                 
             }
 
             .titre{
-                position: relative;
+                position: absolute;
                 display: flex;
                 max-width: 200%;
                 height: 50px;
                 margin-top: 20px;
-                transform: translate(-200px);
+                transform: translatex(-300px);
                 
                 
             }
 
             .metier{
-                width: 100%;
+                max-width: 100%;
             }
             
             .info, .adresse{
                     display: none;
                 }     
+
+/*             .titre{
+                    position:absolute;
+                    display: flex;
+                } */
                 
                 .titre .metier{
                     display: flex;
